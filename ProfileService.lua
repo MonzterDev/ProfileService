@@ -1740,7 +1740,7 @@ function ProfileStore:LoadProfileAsync(
 	profile_key: string,
 	not_released_handler: ((number, string) -> "Repeat" | "Cancel" | "ForceLoad" | "Steal") | "Steal" | "ForceLoad" | nil,
 	_use_mock: boolean
-): GenericProfile? --> [Profile / nil] not_released_handler(place_id, game_job_id)
+): GenericProfile --> [Profile] not_released_handler(place_id, game_job_id)
 	not_released_handler = not_released_handler or "ForceLoad"
 
 	if self._profile_template == nil then
